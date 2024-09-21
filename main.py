@@ -2,8 +2,8 @@ def main():
     book_path = "books/frankenstein.txt"
     text = get_book_text(book_path)
     num_words = get_num_words(text)
-    chars_dict = get_chars_dict(text)
-    chars_sorted_list = chars_dict_to_sorted_list(chars_dict)
+    letter_dict = get_letter_dict(text)
+    chars_sorted_list = letter_dict_to_sorted_list(letter_dict)
 
     print(f"--- Begin report of {book_path} ---")
     print(f"{num_words} words found in the document")
@@ -26,15 +26,15 @@ def sort_on(d):
     return d["num"]
 
 
-def chars_dict_to_sorted_list(num_chars_dict):
+def letter_dict_to_sorted_list(num_letter_dict):
     sorted_list = []
-    for ch in num_chars_dict:
-        sorted_list.append({"char": ch, "num": num_chars_dict[ch]})
+    for ch in num_letter_dict:
+        sorted_list.append({"char": ch, "num": num_letter_dict[ch]})
     sorted_list.sort(reverse=True, key=sort_on)
     return sorted_list
 
 
-def get_chars_dict(text):
+def get_letter_dict(text):
     chars = {}
     for c in text:
         lowered = c.lower()
