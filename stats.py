@@ -1,3 +1,4 @@
 def get_num_words(text):
-    words = text.split()
+    import re
+    words = re.findall(r'\b\w+\b', text.lower())
     return len(words)
