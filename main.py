@@ -28,11 +28,9 @@ def print_report(book_path, num_words, chars_sorted_list):
     print("============ BOOKBOT ============")
     print(f"Analyzing book found at {book_path}...")
     print("----------- Word Count ----------")
-    print(f"Found {num_words} total words")
-    print("--------- Character Count -------")
+    print(f"Found {num_words}
     for item in chars_sorted_list:
-        if not item["char"].isalpha():
-            continue
+    if item["char"].isalpha():  # Only print alphabetic characters
         print(f"{item['char']}: {item['num']}")
 
     print("============= END ===============")
