@@ -7,12 +7,12 @@ def get_chars_dict(text):
     chars = {}
     for c in text:
         lowered = c.lower()
-        if lowered in chars:
-            chars[lowered] += 1
-        else:
-            chars[lowered] = 1
+        if lowered.isalpha():  # Only count alphabetic characters
+            if lowered in chars:
+                chars[lowered] += 1
+            else:
+                chars[lowered] = 1
     return chars
-
 
 def sort_on(d):
     return d["num"]
