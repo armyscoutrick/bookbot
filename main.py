@@ -50,11 +50,6 @@ def print_report(book_path, num_words, chars_sorted_list):
             print(f"{item['char']}: {item['num']}")
 
     print("============= END ===============")
-    for item in chars_sorted_list:
-        if item["char"].isalpha():  # Only print alphabetic characters
-            print(f"{item['char']}: {item['num']}")
-
-    print("============= END ===============")
-
+    
 
 main()
